@@ -33,6 +33,29 @@ let gerenciaRedesSociais = () => {
     if (!achou){
         alert(`Rede social nâo encontrada`)
     }
+    let codigo = Number(prompt(`Informe o código da rede social`))
+    let conta = 0
+    for (let i=0; i<5; i++){
+        if(vetorUsuarios[i].codigoRedeSocial == codigo){
+            conta = conta + vetorUsuarios[i].qtdePost
+        }
+    }
+    if (conta == 0){
+        console.log(`não houve postage ou rede social não existe`)
+    }
+    else {
+        console.log(`A qtde de post na rede social ${codifo} foi ${conta}`)
+    }
+
+    for (let i=0;i<5;i++){
+        let conta = 0
+        for (let j=0;j<5;j++){
+            if (vetorRedesSociais[i].condigo == vetorUsuarios[j]. codigoRedeSocial){
+                conta = conta + vetorUsuarios[i].qtdePost
+            }
+        }
+        console.log(`A qtde de post da rede social ${vetorRedesSociais[i].condigo} é ${conta}`)
+    }
 }
 
 
