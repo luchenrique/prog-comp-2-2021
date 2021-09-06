@@ -4,14 +4,7 @@ let sistemaVendas = () => {
     let vetVendedores = []
     let vetVendas = []
     do {
-        opcao = Number(prompt(`Informe: 
-        \n1. Cadastrar vendedor  
-        \n2. Cadastrar venda  
-        \n3. Procura venda  
-        \n4. Soma venda por vendedor 
-        \n5. Mostra a maior venda do mês 
-        \n6. Mês que mais vendeu 
-        \n7. Sair`))
+        opcao = Number(prompt(`Informe: \n1. Cadastrar vendedor  \n2. Cadastrar venda  \n3. Procura venda  \n4. Soma venda por vendedor \n5. Mostra a maior venda do mês \n6. Mês que mais vendeu \n7. Sair`))
         
         switch(opcao){
             case 1: let objeto = {
