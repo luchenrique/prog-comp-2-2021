@@ -5,7 +5,6 @@ let sistemaVendas = () => {
     let vetVendas = []
     do {
         opcao = Number(prompt(`Informe: \n1. Cadastrar vendedor  \n2. Cadastrar venda  \n3. Procura venda  \n4. Soma venda por vendedor \n5. Mostra a maior venda do mês \n6. Mês que mais vendeu \n7. Sair`))
-        
         switch(opcao){
             case 1: let objeto = {
                 codigo: Number(prompt(`Informe o código`)),
@@ -14,23 +13,22 @@ let sistemaVendas = () => {
             }
             //verifica se já tem outro vendedor com o mesmo código
             let achou = false
-            //vetVendedores.length retorna o tamanho do vetor
-            for (let i=0; i<vetVendedores.length; i++){
-                if (vetVendedores[i].codigo == objeto.codigo){
-                    achou = true // achei - não posso cadastrar
+                //vetVendedores.length retorna o tamanho do vetor
+                for (let i=0; i<vetVendedores.length; i++){
+                    if (vetVendedores[i].codigo == objeto.codigo){
+                        achou = true // achei - não posso cadastrar
+                    }
                 }
-            }
-            if (!achou){
-                // adiciona objeto no vetor
-                vetVendedores.push(objeto)
-                alert(`Vendedor cadastrado com sucesso`)
-            }
-            else {
-                alert(`Vendedor já existe com esse código`)
-            }
-            //add objeto no vetor
-            vetVendedores.push(objeto)
-            
+                    if (!achou){
+                        // adiciona objeto no vetor
+                        vetVendedores.push(objeto)
+                        alert(`Vendedor cadastrado com sucesso`)
+                    }
+                    else {
+                        alert(`Vendedor já existe com esse código`)
+                    }
+                    //add objeto no vetor
+                    vetVendedores.push(objeto)
                     break
             case 2: let objeto1 = {
                         codigo: Number(prompt(`Informe código do vendedor`)),
@@ -103,7 +101,7 @@ let sistemaVendas = () => {
                     break
             default: alert(`Opção inválida`)
         }
-        }
+    }
         while (opcao != 7)
     
 }
