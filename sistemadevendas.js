@@ -1,4 +1,4 @@
-let sistemaVendas = () => {
+let sistemaVendas2 = () => {
 
     let opcao
     let vetVendedores = []
@@ -28,7 +28,7 @@ let sistemaVendas = () => {
                         alert(`Vendedor já existe com esse código`)
                     }
                     //add objeto no vetor
-                    vetVendedores.push(objeto)
+                    console.log(vetVendedores)
                     break
             case 2: let objeto1 = {
                         codigo: Number(prompt(`Informe código do vendedor`)),
@@ -38,8 +38,9 @@ let sistemaVendas = () => {
                     let achou1 = false
                     for(let i=0; i<vetVendas.length; i++){
                         // não podemos cadastrar duas vendas para o mesmo vendedor no mesmo mês
-                        if ((vetVendas[i].codigo == objeto1.codigo) && (vetVendas.mes[i] == objeto1.mes))
-                        achou1 = true // encontrei - não podemos cadastrar
+                        if ((vetVendas[i].codigo == objeto1.codigo) && (vetVendas[i].mes == objeto1.mes)){
+                            achou1 = true // encontrei - não podemos cadastrar
+                        }
                     }
                     if (!achou1){
                         vetVendas.push(objeto1)
@@ -47,25 +48,27 @@ let sistemaVendas = () => {
                     else{
                         alert(`Já existe venda desse vendedor esse mês`)
                     }
-                    vetVendas.push(objeto1)
+                    console.log(vetVendas)
                     break
             case 3: let codigo = Number(prompt(`Informe o código do vendedor`))
                     let mes = Number(prompt(`Informe o mês da venda`))
                     // percorre vetor de vendas
-                    for(let i=0;i<vetVendas,length; i++){
+                    let achou3 = false
+                    for(let i=0;i<vetVendaslength; i++){
                         if ((vetVendas[i].codigo == codigo) && (vetVendas[i].mes == mes)){
                             console.log(`O valor da venda do funcionario ${codigo} no mes ${mes} foi ${vetVendas[i].valor}`)
+                            achou3 = true
                         }
                     }
-                    if (!achou){
+                    if (!achou3){
                         console.log(`Venda não encontrada para este funcionário neste mês`)
                     }
                     break
-            case 4: let codigo = Number(prompt(`Informe o código de vendedor`))
+            case 4: let codigo4 = Number(prompt(`Informe o código de vendedor`))
                     // percorre o vetor de vendas  
                     let soma = 0 
                     for (let i=0; i<vetVendas.length; i++){
-                        if (vetVendas[i].codigo == condigo){
+                        if (vetVendas[i].codigo == codigo4){
                             soma = soma + vetVendas[i].valor
                         }
                     }
@@ -73,7 +76,7 @@ let sistemaVendas = () => {
                         console.log(`Venda não encontrada para ess funcionario`)
                     }
                     else {
-                        console.log(`O total de vendas do vendedor ${codigo} foi de ${soma}`)
+                        console.log(`O total de vendas do vendedor ${codigo4} foi de ${soma}`)
                     }
                     break
             case 5: let mes5 = Number(prompt(`Informe o mês de interesse`))
@@ -83,13 +86,13 @@ let sistemaVendas = () => {
                         if (vetVendas[i].mes == mes5){
                             if (vetVendas[i].valor > maiorValor){
                                 maiorValor = vetVendas[i].valor // atualiza o maior valor
-                                vendedorMaisVendeu = vendedorMaisVendeu[i].condigo
+                                vendedorMaisVendeu = vetVendas[i].codigo
                             }
                         }
                     }
                     console.log(`O vendedor que mais vendeu foi ${vendedorMaisVendeu} com ${maiorValor}`)
                     break
-            case 6: let vetMeses = [0,0,0,0,0,0,0,0,0,0]
+            case 6: let vetMeses = [0,0,0,0,0,0,0,0,0,0,0,0]
                     //percorre o vetor de vendas
                     for(let i=0; i<vetVendas.length; i++){
                         let aux = vetVendas[i].mes 
