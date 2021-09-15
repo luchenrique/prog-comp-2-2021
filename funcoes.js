@@ -3,8 +3,9 @@ function principal(){
     let opcao
     let idade  // escopo local -> FUNCIONA NO LOCAL ONDE ELE FOI DEFINIDO
     let peso, altura
+    let vetor = [] // declarão do vetor
     do{
-        opcao = Number(prompt(`Digite: \n1. F1 \n2. F2 \n3. F3 \n4. Sair`))
+        opcao = Number(prompt(`Digite: \n1. F1 \n2. F2 \n3. F3 \n4. F4 \n5. Sair`))
         switch(opcao){
             case 1: idade = Number(prompt(`Informe sua idade`))
                     idade = f1(idade)
@@ -20,14 +21,22 @@ function principal(){
                     f3(idade, peso, altura)
                     break
 
-            case 4: alert(`Programa será encerrado`)
+            case 4: vetor.push(1) // adiciona 1
+                    vetor.push(2) // adiciona 2
+                    vetor.push(3) // adiciona 3
+                    f4(vetor) // passando um vetor como um parâmetro de uma função
+                    // passar uma refencia do vetor
+                    alert(vetor)
+                    break
+
+            case 5: alert(`Programa será encerrado`)
                     break
 
             default: alert(`Opção inválida`)
         }
 
     }
-    while(opcao != 4)
+    while(opcao != 5)
 }
 // função que recebe parâmetro
 function f1(idade){
@@ -43,4 +52,10 @@ function f2(idade, peso){
 // função que recebe parâmetro
 function f3(idade, peso, altura){
     alert(`Você tem ${idade} de idade, pesa ${peso} quilos e tem ${altura}cm de altura`)
+}
+function f4(vetor){
+    //alterando o valor do vetor
+    vetor[0] = vetor [0] + 10
+    vetor[1] = vetor [1] + 10
+    vetor[2] = vetor [2] + 10
 }
